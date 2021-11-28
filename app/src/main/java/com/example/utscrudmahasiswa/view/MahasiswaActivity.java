@@ -3,6 +3,7 @@ package com.example.utscrudmahasiswa.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -77,6 +78,13 @@ public class MahasiswaActivity extends AppCompatActivity {
                 deleteMahasiswa(npm);
             }
         });
+
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(view.getContext(), SearchMahasiswaActivity.class));
+            }
+        });
     }
 
     void initDatabase() {
@@ -142,8 +150,6 @@ public class MahasiswaActivity extends AppCompatActivity {
                 jurusans.add(jurusan);
             } while (cursor.moveToNext());
         }
-
-        Toast.makeText(this, "berhasil mengambil data " + jurusans.size(), Toast.LENGTH_SHORT).show();
 
         return jurusans;
     }

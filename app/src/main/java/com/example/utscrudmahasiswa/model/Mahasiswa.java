@@ -6,6 +6,9 @@ public class Mahasiswa {
     String nama;
     String angkatan;
 
+    public Mahasiswa() {
+    }
+
     public Mahasiswa(String npm, String kodeJurusan, String nama, String angkatan) {
         this.npm = npm;
         this.kodeJurusan = kodeJurusan;
